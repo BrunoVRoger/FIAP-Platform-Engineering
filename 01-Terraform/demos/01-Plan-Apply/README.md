@@ -155,7 +155,6 @@ O `terraform plan` é uma etapa crítica no fluxo de trabalho do Terraform. Ele 
 5. Agora execute um `terraform apply -auto-approve` para que sejam criados os recursos na AWS.
 
     ![apply](images/apply.png)
-    ![apply](images/apply-2.png)
 
 
 <details>
@@ -281,7 +280,7 @@ Para manter a segurança e integridade da infraestrutura em ambientes de produç
 </blockquote>
 </details>
 
-6. Acesse o painel [EC2](https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#Instances:instanceState=running) para ver o recurso criados. Você verá que o recurso foi criado sem nome e que já tem uma maquina do cloud9 rodando.
+6. Acesse o painel [EC2](https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#Instances:instanceState=running) para ver o recurso criados. Você verá que o recurso foi criado sem nome e que já tem uma maquina do Codespaces rodando.
 
     ![awspainelec2](images/painelec21.png)
 
@@ -367,7 +366,7 @@ Para proteger a infraestrutura em ambientes de produção, **evite usar `terrafo
 
    ![ec22](images/painelec22.png)
 
-9. De volta ao Cloud9, saia da pasta com o comando `cd ..`
+9. De volta ao Codespaces, saia da pasta com o comando `cd ..`
 10. Enter na pasta EC2-ssh com o comando `cd EC2-ssh`
 11. Nesse exemplo voce utilizará a chave vockey.pem que criou no setup. Para iniciar o processo execute o comando `terraform init`.
 12. Este código irá criar maquinas ec2 e acessar as mesmas para instalar Nginx. Para planejar execute o comando `terraform plan`
@@ -513,11 +512,18 @@ Esse conjunto de scripts configura uma instância EC2 e a transforma em um servi
     
     ![](images/sgpainel.png)
 
+    ![](images/sgpainel2.png)
+
 16. Apague todas as regras existentes e adicione uma regra que irá liberar `Todo o tráfego` para `Qualquer Local-IpV4` como na imagem abaixo e clique em `Salvar Regras`
+    
     ![](images/anywhere.png)
 
+    ![](images/anywhere2.png)
 
-17. De volta ao Cloud9, execute o comando `terraform apply -auto-approve` para provisionar a máquina.
+    ![](images/anywhere3.png)
+
+
+17. De volta ao Codespaces, execute o comando `terraform apply -auto-approve` para provisionar a máquina.
 18. Quando o comando for concluido com sucesso, você pode pegar o dns da maquina criada que esta no final outputs do terraform e colocar no navegar que irá ser exibida uma pagina inicial do Nginx.
     
     ![](images/apply-3.png)

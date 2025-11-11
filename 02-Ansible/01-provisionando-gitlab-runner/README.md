@@ -27,17 +27,17 @@ source ~/venv/bin/activate
 
 4. Antes de excutar os scripts para criação do runner do gitlab é necessário criar uma conta no serviço. Caso já tenha, apenas faça o login. [GITLAB](https://gitlab.com/).
 5. Para conseguir fazer os commits para o gitlab você irá precisar criar uma chave de conexão. Para tal siga os passos:
-   1. Vá ao terminal do Cloud9 e utilize o seguinte comando para criar a chave:
+   1. Vá ao terminal do Codespaces e utilize o seguinte comando para criar a chave:
    ```shell
     ssh-keygen -t rsa -b 2048 -C "gitlab key" -f /home/vscode/.ssh/gitlab
    ```
    2. Pressione enter duas vezes para sinalizar que não quer senha para a chave
    ![](img/gitlab-1.png)
-   3. Abre a parte publica da sua chave no IDE do cloud9 com o comando `code /home/vscode/.ssh/gitlab.pub` e copie o conteúdo para a área de transferência do seu computador.
+   3. Abre a parte publica da sua chave no IDE do Codespaces com o comando `code /home/vscode/.ssh/gitlab.pub` e copie o conteúdo para a área de transferência do seu computador.
    4. Acesse o link da configuração de chaves do seu gitlab: [Chaves Gitlab](https://gitlab.com/-/user_settings/ssh_keys)
    5. Cole o conteúdo copiado no campo destacado e clique em `Add New Key`
    ![](img/gitlab-2.png)
-   6. Devolta ao terminal do cloud9 exetuce os comandos abaixo para ativar a chave na sessão de terminal que esta utilizando:
+   6. Devolta ao terminal do Codespaces exetuce os comandos abaixo para ativar a chave na sessão de terminal que esta utilizando:
    ```shell
     eval $(ssh-agent -s) 
     ssh-add -k /home/vscode/.ssh/gitlab
@@ -46,7 +46,7 @@ source ~/venv/bin/activate
 7. De o nome de `primeiro-projeto` ao projeto. Marque como `Public` e desmarque a opção de inicializar com README. 
    ![](img/gitlab-3.png)
 8. Clique em `Create project`
-9. De volta ao Cloud9 você vai subir o código desse primeiro projeto no gitlab. Para isso siga os comandos abaixo tomando o cuidado com os pontos onde precisa colocar suas informações
+9. De volta ao Codespaces você vai subir o código desse primeiro projeto no gitlab. Para isso siga os comandos abaixo tomando o cuidado com os pontos onde precisa colocar suas informações
 ```bash
 git config --global user.name "SEU NOME"
 git config --global user.email "SEU EMAIL DO GITLAB"
@@ -73,7 +73,7 @@ git push -u origin master
     ![](img/gitlab-8.png)
 13. Copie o token e mantenha na área de transferência. Clique nos três pontos ao lado de `New project runner` e copie.
     ![](img/gitlab-9.png)
-14. De volta ao cloud9 você vai colar o token do gitlab no arquivo ansible que registra o runner. Para tal execute o comando `code /workspaces/FIAP-Platform-Engineering/02-Ansible/01-provisionando-gitlab-runner/ansible-gitlab-runner/tasks/register-runner.yml` e altere a linha 48. Não esqueça de salvar.
+14. De volta ao Codespaces você vai colar o token do gitlab no arquivo ansible que registra o runner. Para tal execute o comando `code /workspaces/FIAP-Platform-Engineering/02-Ansible/01-provisionando-gitlab-runner/ansible-gitlab-runner/tasks/register-runner.yml` e altere a linha 48. Não esqueça de salvar.
 15. O runner do gitlab será uma EC2 que será provisionada com terraform. Para entrar na pasta com o código execute o comando `cd /workspaces/FIAP-Platform-Engineering/02-Ansible/01-provisionando-gitlab-runner/terraform-gitlab-runner/`
 16. Atualize o estado remoto do repositório para utilizar um bucket S3 disponivel na sua conta. Abra o arquivo com `code state.tf`
 17. Agora que já alterou o bucket e salvou. Execute o comando `terraform init`

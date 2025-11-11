@@ -196,7 +196,7 @@ Esses processos garantem que o ALB distribua o tráfego apenas para instâncias 
 
    ![inservice](images/inservice2.png)
 
-7. Utilize o dns do ELB fornecido como saida no terraform no cloud9 para colar no navegador e testar o funcionamento da Stack
+7. Utilize o dns do ELB fornecido como saida no terraform no Codespaces para colar no navegador e testar o funcionamento da Stack
 
    ![dnsc9](images/dnsc9.png)
 

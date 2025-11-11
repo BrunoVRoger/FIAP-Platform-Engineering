@@ -202,7 +202,7 @@ Esses processos garantem que o ALB distribua o tráfego apenas para instâncias 
 
    ![nginx1](images/nginx1.png)
 
-8. Abra o arquivo main.tf com o comando `c9 open main.tf` e altere o valor do count para 3 na linha 67.
+8. Abra o arquivo main.tf com o comando `code main.tf` e altere o valor do count para 3 na linha 67.
 
    ![countmod](images/countmod.png)
 

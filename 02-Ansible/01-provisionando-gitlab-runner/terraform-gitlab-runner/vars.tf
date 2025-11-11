@@ -17,7 +17,7 @@ variable "KEY_NAME" {
   default = "vockey"
 }
 variable "PATH_TO_KEY" {
-  default = "/home/ubuntu/.ssh/vockey.pem"
+  default = "/home/vscode/.ssh/vockey.pem"
 }
 variable "INSTANCE_USERNAME" {
   default = "ubuntu"

@@ -4,7 +4,7 @@
     ![](images/s3nome.png)
 
 3. Entre na pasta 'test' com o comando `cd test`
-4.  Utilize o comando `c9 open state.tf` para abrir o arquivo responsavel por configurar o estado remoto e adicione o nome do seu bucket S3 na linha 3.
+4.  Utilize o comando `code state.tf` para abrir o arquivo responsavel por configurar o estado remoto e adicione o nome do seu bucket S3 na linha 3.
    
    ![](images/state.png)
 

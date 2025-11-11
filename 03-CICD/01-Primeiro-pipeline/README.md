@@ -1,5 +1,5 @@
 1. Nesse exercicio você irá utilizar o primeiro pipeline de CI/CD utilizando gitlab. Para iniciar entre na pasta onde esta o código do repositório cirado no exercício anterior. `cd ~/environment/primeiro-projeto/`.
-2. Crie o arquivo .gitlab-ci.yml que terá as intruções do que fazer no pipeline. `c9 open .gitlab-ci.yml`
+2. Crie o arquivo .gitlab-ci.yml que terá as intruções do que fazer no pipeline. `code .gitlab-ci.yml`
 3. Inclua o conteúdo abaixo no .gitlab-ci.yml. Com esses comandos o pipeline terá 2 etapas. Plan e Apply. Plan será a parte de CI e apply a de CD. Note que o arquivo plan é exportado para ser utilizado na etapa de apply.
 ```yaml
 ---
@@ -27,14 +27,14 @@ apply:
   tags:
     - shell
 ```
-4. Modifique o nome do bucket no state.tf para o que esta utilizando para guardar o estado nas demos anteriores. Para abrir o arquivo utilize o comando `c9 open state.tf`
+4. Modifique o nome do bucket no state.tf para o que esta utilizando para guardar o estado nas demos anteriores. Para abrir o arquivo utilize o comando `code state.tf`
 5. Atualize o repositório do gitlab com os seguintes comandos:
 ```shell
 git add .gitlab-ci.yml
 git add state.tf
 git commit -m "primeiro pipeline"
 eval $(ssh-agent -s)    
-ssh-add -k /home/ubuntu/.ssh/gitlab
+ssh-add -k /home/vscode/.ssh/gitlab
 git push origin master
 ```
 6. Vá até o gitlab, abra seu projeto `primeiro-projeto` e na lateral esquerda clique em `CI/CD` e após clique em `pipelines`

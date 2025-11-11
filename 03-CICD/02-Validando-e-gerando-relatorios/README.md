@@ -1,5 +1,5 @@
 1. Continuando no repositório primeiro-projeto, nesta demo você irá adicionar um passo para validar o código e gerar um relatório sobre os testes. Entre na pasta do projeto `cd ~/environment/primeiro-projeto/`
-2. Abra o arquivo .gitlab-ci.yml para alterar o conteúdo do script do pipeline. Para abrir utilize o comando `c9 open .gitlab-ci.yml`. 
+2. Abra o arquivo .gitlab-ci.yml para alterar o conteúdo do script do pipeline. Para abrir utilize o comando `code .gitlab-ci.yml`. 
 3. Atualize o código para que ele fique como o exemplo abaixo. Foi adicionado o stage validate que aplica tando o terraform validate para verificar a sintaxe do terraform quanto o [checkov](https://www.checkov.io/) que irá fazer verificações de padrões de segurança e operação comuns no mercado. Ao final ele gera e exporta um relatório no formaro junit xml.
 ```yaml
 stages:
@@ -53,7 +53,7 @@ apply:
 git add .gitlab-ci.yml
 git commit -m "pipeline com validação"
 eval $(ssh-agent -s)    
-ssh-add -k /home/ubuntu/.ssh/gitlab
+ssh-add -k /home/vscode/.ssh/gitlab
 git push origin master
 ```
 5. Vá até os pipelines do seu repositório e note que agora são 3 passos ao invés de 2.

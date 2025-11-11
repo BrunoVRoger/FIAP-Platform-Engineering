@@ -105,7 +105,28 @@ Você irá utilizar 2 ferramentas para desenvolver os laboratorios:
    
 ![](img/codespaces9.png)
 
-8. Pronto! Seu ambiente está configurado e pronto para começar os laboratórios. 
+8. Agora vamos configurar a chave SSH que será utilizada para conectar no servidor EC2 durante o curso. No terminal do Codespaces, digite o comando abaixo para copiar a chave SSH para o local correto:
+
+```bash
+mkdir -p /home/vscode/.ssh/
+code ~/.ssh/vockey.pem
+```
+
+9. De volta a aba do AWS Academy, no canto superior direito clique em 'AWS Details', expanda o conteudo de 'SSH Key' 'Show' e copie o conteudo da chave privada SSH.
+
+![](img/codespacess12.png)
+
+![](img/codespacess13.png)
+
+
+10. Volte para o Codespaces e cole o conteudo copiado no arquivo `~/.ssh/vockey.pem` e salve o arquivo com ctrl+s.
+11. Execute o comando abaixo para ajustar as permissões da chave SSH:
+
+```bash
+chmod 400 ~/.ssh/vockey.pem
+```
+
+12. Pronto! Seu ambiente está configurado e pronto para começar os laboratórios. 
 
 > [!WARNING] 
 > Esse passo de copiar as credenciais para o Codespaces é necessário para que você consiga executar os comandos da AWS. Caso você feche o Codespaces e abra novamente, você terá que repetir esse passo para copiar as credenciais novamente. Assim como no inicio de cada aula.
